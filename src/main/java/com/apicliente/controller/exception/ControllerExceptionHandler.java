@@ -1,7 +1,7 @@
 package com.apicliente.controller.exception;
 
-import com.cliente.api.service.exception.DataIntegrityViolationException;
-import com.cliente.api.service.exception.ObjectNotFoundException;
+import com.apicliente.service.exception.DataIntegrityViolationException;
+import com.apicliente.service.exception.ObjectNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -29,7 +29,7 @@ public class ControllerExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<StandardError> validation(MethodArgumentNotValidException e, HttpServletRequest request){
+    public ResponseEntity<StandardError> validation(MethodArgumentNotValidException e, HttpServletRequest request) {
 
         ValidationError err = new ValidationError(HttpStatus.BAD_REQUEST.value(), "Error de validação");
 
